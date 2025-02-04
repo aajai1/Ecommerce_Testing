@@ -2,6 +2,7 @@ package com.Test;
 
 import java.io.File;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,34 +17,35 @@ import com.utils.SourcesLink;
 public class Products8 {
 	@Test
 	public static void products8() throws InterruptedException  {
-		ChromeOptions op = new ChromeOptions();
-		String path="C:\\Users\\acer\\Downloads\\CRX Files";
-		File file = new File(path);
-		//op.addArguments("--disable-extensions-except="+file);
-		op.addArguments("--load-extension=C:\\Users\\acer\\Downloads\\CRX Files");
-		//op.addExtensions(file);
-	//WebDriver driver = Browser.chromeDriver();
-	WebDriver driver= new ChromeDriver(op);
+
+	WebDriver driver= Browser.chromeDriver();
 		SourcesLink.link(driver);
 	WebElement logo = LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[1]/div/a/img");
 	if(logo.isDisplayed()) {
 		System.out.println("Logo is Displayed.. You can proceed");
 	}else System.out.println("Logo is not Displayed.. STOP STOP");
-	LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a").click();
+	LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]").click();
 	//System.out.println(location.getLocation());
 	
-	LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a").click();
+	LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/h2").click();
 	WebElement allProducts= LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/h2");
 	if(allProducts.isDisplayed()) {
 		System.out.println("All Products tab is Displayed");
 	}else System.out.println("All Products tab is not Displayed");
 	
-	WebElement ele=LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div[1]/div[4]/div/div[1]/div[1]");
-	 
-	Actions action = new Actions(driver);
-	action.moveToElement(ele).perform();
-	Thread.sleep(1000);
-	LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li").click();
+	WebElement ele=LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li");
+	 System.out.println(ele.getLocation());
+//	Actions action = new Actions(driver);
+//	action.moveToLocation(0, 1000).perform();
+//	Thread.sleep(1000);
+	 JavascriptExecutor js = (JavascriptExecutor)driver;
+	 js.executeScript("window.scrollTo(0,743);");
+	WebElement item=LocatorsForElement.CssSelectorLocator(driver, "body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.choose > ul");
+	if(item.isDisplayed()) {
+		System.out.println("Item is displayed");
+		item.click();
+	}else System.out.println("Item is not displayed");
+		
 	//product name
 	WebElement productname = LocatorsForElement.XpathLocator(driver, "/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2");
 	if(productname.isDisplayed()) {
@@ -74,5 +76,6 @@ public class Products8 {
 	if(brandName.isDisplayed()) {
 		System.out.println("Brand Name is Displayed");
 	}else System.out.println("Brand Name is Displayed");
+	driver.close();
 	}
 }

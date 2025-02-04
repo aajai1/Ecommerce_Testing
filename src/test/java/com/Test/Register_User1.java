@@ -1,5 +1,6 @@
 package com.Test;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -27,7 +28,7 @@ public class Register_User1 {
 		}else System.out.println("signUpText is not Displayed.. STOP STOP");
 		//name and mail
 		LocatorsForElement.NameLocator(driver, "name").sendKeys("My Name");
-		//email
+	
 		LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div[3]/div/form/input[3]").sendKeys("jospeh.bernhard@rohan.notest");
 		LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div[3]/div/form/button").click();
 		WebElement enterAccInfo = LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/div[1]/h2/b");
@@ -37,6 +38,8 @@ public class Register_User1 {
 		WebElement MrButton = LocatorsForElement.XpathLocator(driver, "//*[@id=\"id_gender1\"]");
 		MrButton.click();
 		//enter details
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollTo(0,743);");
 		LocatorsForElement.IdLocator(driver, "password").sendKeys("myname@1258");
 		LocatorsForElement.IdLocator(driver, "days").click();
 		LocatorsForElement.XpathLocator(driver, "//*[@id=\"days\"]/option[28]").click();
