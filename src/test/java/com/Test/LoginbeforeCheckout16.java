@@ -71,6 +71,7 @@ public class LoginbeforeCheckout16 {
 		WebElement del = LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/h2");
 		Assert.assertTrue(del.isDisplayed(),"Delecetd msg not displayed");
 		LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/div").click();
+		
 		driver.close();
 	}
 }

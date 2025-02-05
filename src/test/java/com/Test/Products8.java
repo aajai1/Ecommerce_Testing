@@ -26,7 +26,7 @@ public class Products8 {
 	}else System.out.println("Logo is not Displayed.. STOP STOP");
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]").click();
 	//System.out.println(location.getLocation());
-	
+	//product
 	LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/h2").click();
 	WebElement allProducts= LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[2]/div/h2");
 	if(allProducts.isDisplayed()) {
