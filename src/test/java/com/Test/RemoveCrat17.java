@@ -2,12 +2,9 @@ package com.Test;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -18,12 +15,16 @@ import com.utils.LocatorsForElement;
 import com.utils.SourcesLink;
 
 public class RemoveCrat17 {
-	@Test
-	public static void products8() throws InterruptedException  {
-		
-	WebDriver driver= Browser.chromeDriver();
+	static WebDriver driver;
+	
+	public static void beforTest() {
+		WebDriver driver= Browser.chromeDriver();
+		//WebDriver Edge=Browser.EdgeBrowser();
 		SourcesLink.link(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	}
+	@Test
+	public static void products8()   {
 	WebElement logo = LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[1]/div/a/img");
 	Assert.assertTrue(logo.isDisplayed(), "Logo is not displayed");
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]").click();

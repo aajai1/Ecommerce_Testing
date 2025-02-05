@@ -13,7 +13,7 @@ import com.utils.SourcesLink;
 public class BrandProducts19 {
 @Test
 public void brandProducts19() {
-	WebDriver driver = Browser.EdgeBrowser();
+	WebDriver driver = Browser.chromeDriver();
 	SourcesLink.link(driver);
 	LocatorsForElement.XpathLocator(driver, "//a[@href='/products']").click();
 	WebElement brand = LocatorsForElement.XpathLocator(driver, "//a[@href='/brand_products/Polo']");
