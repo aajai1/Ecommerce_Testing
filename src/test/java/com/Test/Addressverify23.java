@@ -19,7 +19,7 @@ import io.github.serpro69.kfaker.Faker;
 public class Addressverify23 {
 	@Test
 	public static void registerUser() {
-		WebDriver driver = Browser.chromeDriver();
+		WebDriver driver = Browser.edgeDriver();
 		SourcesLink.link(driver);
 		WebElement logo = LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[1]/div/a/img");
 		if(logo.isDisplayed()) {
@@ -66,6 +66,7 @@ public class Addressverify23 {
 		LocatorsForElement.IdLocator(driver, "state").sendKeys("California");
 		LocatorsForElement.IdLocator(driver, "city").sendKeys("That city");
 		LocatorsForElement.IdLocator(driver, "zipcode").sendKeys("792722");
+	
 		LocatorsForElement.IdLocator(driver, "mobile_number").sendKeys("1257896342");
 		LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/div[1]/form/button").click();
 		WebElement accountCreated = LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/h2/b");
@@ -97,12 +98,14 @@ public class Addressverify23 {
 		
 		//billingAddress
 		WebElement bill = LocatorsForElement.XpathLocator(driver, "//*[@id=\"cart_items\"]/div/div[3]/div/div[1]");
-		String billadd =bill.getText().replaceAll("YOUR DELIVERY ADDRESS", " ");
-		WebElement del = LocatorsForElement.XpathLocator(driver, "address_invoice");
-		del.getText().replaceAll("YOUR BILLING ADDRESS", " ");
-		if(bill.equals(del)) {
+		String billadd =bill.getText();
+		WebElement del = LocatorsForElement.IdLocator(driver, "address_delivery");
+		if(billadd.contains("792722")) {
 			System.out.println("address is correct");
 		}else System.out.println("Wrong Address ");
-		
+		LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a").click();
+		WebElement verifyDel = LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/h2");
+		Assert.assertTrue(verifyDel.isDisplayed(), "Account Deleted is not Displayed");
+		driver.quit();
 	}
 }
