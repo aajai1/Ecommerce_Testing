@@ -1,6 +1,7 @@
 package com.Test;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -28,9 +29,15 @@ public class ContactUs6 {
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[2]/input").sendKeys("email@123");
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[3]/input").sendKeys("Testing");
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"message\"]").sendKeys("Hi ima here\n to test");
+	
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[5]/input").sendKeys("C:\\Users\\acer\\Pictures\\15126-2700x1800-desktop-hd-game-of-thrones-background-photo.jpg");
-	LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[6]/input").click();
-	//Thread.sleep(3000);
+	WebElement submit =LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[6]/input");
+	
+	JavascriptExecutor js= (JavascriptExecutor)driver;
+	js.executeScript("window.scrollTo(0,630);");
+	
+	submit.click();
+	
 	Alert alert = driver.switchTo().alert();
 	alert.accept();
 	WebElement success=LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-page\"]/div[2]/div[1]/div/div[2]");

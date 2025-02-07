@@ -3,6 +3,7 @@ package com.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.utils.Browser;
@@ -12,7 +13,7 @@ import com.utils.SourcesLink;
 import io.github.serpro69.kfaker.Faker;
 
 public class Register_User1 {
-	@Test(invocationCount = 4)
+	@Test
 	public static void registerUser() {
 		WebDriver driver = Browser.edgeDriver();
 		SourcesLink.link(driver);

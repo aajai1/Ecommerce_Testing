@@ -95,7 +95,9 @@ public class RegisterBeforCheckout15 {
 		LocatorsForElement.NameLocator(driver, "cvc").sendKeys("225");
 		LocatorsForElement.NameLocator(driver, "expiry_month").sendKeys("25");
 		LocatorsForElement.NameLocator(driver, "expiry_year").sendKeys("2568");
-		LocatorsForElement.IdLocator(driver, "submit").click();
+		WebElement submit =LocatorsForElement.IdLocator(driver, "submit");
+		js.executeScript("window.scrollTo(0,548);");
+		submit.click();
 //		//placed
 //		WebElement placed = LocatorsForElement.XpathLocator(driver, "//*[@id=\"success_message\"]/div");
 //		Assert.assertTrue(placed.isDisplayed(), "placed is not displayed");

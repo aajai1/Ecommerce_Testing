@@ -1,8 +1,12 @@
 package com.Test;
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,18 +26,26 @@ public class ViewCategoryProducts18 {
 		js.executeScript("window.scrollTo(0,614);");
 		LocatorsForElement.XpathLocator(driver, "//*[@id=\"accordian\"]/div[1]/div[1]/h4/a/span").click();
 		//dress
-		LocatorsForElement.XpathLocator(driver, "//*[@id=\"Women\"]/div/ul/li[1]").click();
-		String dress = "Women - Dress Products";
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 WebElement dresButton=wait.until(ExpectedConditions.elementToBeClickable(LocatorsForElement.XpathLocator(driver, "/html/body/section[2]/div/div/div[1]/div/div[1]/div[1]/div[2]/div/ul/li[1]/a")));
+		dresButton.click();
+		//dressText.click();
+		
+		String dress = "WOMEN - DRESS PRODUCTS";
 		WebElement dressElement = LocatorsForElement.XpathLocator(driver, "/html/body/section/div/div[2]/div[2]/div/h2");
-		dressElement.getText();
-		Assert.assertTrue(dressElement.equals(dress),"Category Page is not Displayed");
+		
+		System.out.println(dressElement.getText());
+		Assert.assertTrue(dress.equals(dressElement.getText()),"Category Page is not Displayed");
 		//men
 		LocatorsForElement.XpathLocator(driver, "//*[@id=\"accordian\"]/div[2]/div[1]/h4/a/span").click();
 		//jeans
-		LocatorsForElement.XpathLocator(driver, "//*[@id=\"Men\"]/div/ul/li[2]").click();
-		String jeans="Men - Jeans Products";
+		WebElement jeansButton=LocatorsForElement.XpathLocator(driver, "/html/body/section/div/div[2]/div[1]/div/div[1]/div[2]/div[2]/div/ul/li[2]/a");
+		WebElement jclick=wait.until(ExpectedConditions.elementToBeClickable(jeansButton));
+		jclick.click();
+		String jeans="MEN - JEANS PRODUCTS";
 		WebElement jeansElement = LocatorsForElement.XpathLocator(driver, "/html/body/section/div/div[2]/div[2]/div/h2");
-		Assert.assertTrue(jeansElement.equals(jeans), "Jeans category is not Dispplayed");
+		
+		Assert.assertTrue(jeansElement.getText().equals(jeans), "Jeans category is not Dispplayed");
 		driver.quit();
 		
 	

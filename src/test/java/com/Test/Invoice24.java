@@ -82,6 +82,7 @@ public class Invoice24 {
 				LocatorsForElement.IdLocator(driver, "mobile_number").sendKeys("1257896342");
 				LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/div[1]/form/button").click();
 				WebElement accountCreated = LocatorsForElement.XpathLocator(driver, "//*[@id=\"form\"]/div/div/div/h2/b");
+				
 				if(accountCreated.isDisplayed()) {
 					System.out.println("Account Created! is Displayed.. You can proceed");
 				}else System.out.println("Account Created! is not Displayed.. STOP STOP");

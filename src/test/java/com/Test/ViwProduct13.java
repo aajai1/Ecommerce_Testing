@@ -38,7 +38,7 @@ public class ViwProduct13 {
 		viewCart.click();
 		WebElement 	 Proceed= LocatorsForElement.IdLocator(driver, "cart_items");
 		Assert.assertTrue(Proceed.isDisplayed(), "Proceed to checout not visible");
-		
+		driver.close();
 
 	}
 }
