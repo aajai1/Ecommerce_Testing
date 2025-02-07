@@ -12,9 +12,9 @@ import com.utils.SourcesLink;
 import io.github.serpro69.kfaker.Faker;
 
 public class Register_User1 {
-	@Test
+	@Test(invocationCount = 4)
 	public static void registerUser() {
-		WebDriver driver = Browser.chromeDriver();
+		WebDriver driver = Browser.edgeDriver();
 		SourcesLink.link(driver);
 		WebElement logo = LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[1]/div/a/img");
 		if(logo.isDisplayed()) {

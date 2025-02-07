@@ -29,7 +29,7 @@ public class ContactUs6 {
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[3]/input").sendKeys("Testing");
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"message\"]").sendKeys("Hi ima here\n to test");
 	LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[5]/input").sendKeys("C:\\Users\\acer\\Pictures\\15126-2700x1800-desktop-hd-game-of-thrones-background-photo.jpg");
-	LocatorsForElement.CssSelectorLocator(driver, "#contact-us-form > div:nth-child(7) > input").click();
+	LocatorsForElement.XpathLocator(driver, "//*[@id=\"contact-us-form\"]/div[6]/input").click();
 	//Thread.sleep(3000);
 	Alert alert = driver.switchTo().alert();
 	alert.accept();

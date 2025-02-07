@@ -1,26 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Test(failed)">
-    <parameter name="browser" value="Chrome"/>
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.Test.AddProduct12">
+      <class name="com.Test.Invoice24">
         <methods>
           <include name="products8"/>
-          <include name="cross"/>
         </methods>
-      </class> <!-- com.Test.AddProduct12 -->
+      </class> <!-- com.Test.Invoice24 -->
+      <class name="com.Test.ViewCategoryProducts18">
+        <methods>
+          <include name="viewCategoryProducts18"/>
+        </methods>
+      </class> <!-- com.Test.ViewCategoryProducts18 -->
+      <class name="com.Test.LogoutTest4">
+        <methods>
+          <include name="logoutTest"/>
+        </methods>
+      </class> <!-- com.Test.LogoutTest4 -->
+      <class name="com.Test.WithArrow25">
+        <methods>
+          <include name="useArrow25"/>
+        </methods>
+      </class> <!-- com.Test.WithArrow25 -->
+      <class name="com.Test.Recommend22">
+        <methods>
+          <include name="recommend"/>
+        </methods>
+      </class> <!-- com.Test.Recommend22 -->
+      <class name="com.Test.WithoutArrow26">
+        <methods>
+          <include name="useArrow25"/>
+        </methods>
+      </class> <!-- com.Test.WithoutArrow26 -->
+      <class name="com.Test.BrandProducts19">
+        <methods>
+          <include name="brandProducts19"/>
+        </methods>
+      </class> <!-- com.Test.BrandProducts19 -->
+      <class name="com.Test.ExistingAcc5">
+        <methods>
+          <include name="existingAcc"/>
+        </methods>
+      </class> <!-- com.Test.ExistingAcc5 -->
+      <class name="com.Test.LoginbeforeCheckout16">
+        <methods>
+          <include name="loginUser"/>
+        </methods>
+      </class> <!-- com.Test.LoginbeforeCheckout16 -->
+      <class name="com.Test.RegisterBeforCheckout15">
+        <methods>
+          <include name="resgisterBeforeCheckout15"/>
+        </methods>
+      </class> <!-- com.Test.RegisterBeforCheckout15 -->
+      <class name="com.Test.ContactUs6">
+        <methods>
+          <include name="contactUs"/>
+        </methods>
+      </class> <!-- com.Test.ContactUs6 -->
+      <class name="com.Test.Addressverify23">
+        <methods>
+          <include name="registerUser"/>
+        </methods>
+      </class> <!-- com.Test.Addressverify23 -->
+      <class name="com.Test.SearchProduct20">
+        <methods>
+          <include name="searchProducts"/>
+        </methods>
+      </class> <!-- com.Test.SearchProduct20 -->
+      <class name="com.Test.Register_User1">
+        <methods>
+          <include name="registerUser"/>
+        </methods>
+      </class> <!-- com.Test.Register_User1 -->
+      <class name="com.Test.Review21">
+        <methods>
+          <include name="review21"/>
+        </methods>
+      </class> <!-- com.Test.Review21 -->
+      <class name="com.Test.RemoveCrat17">
+        <methods>
+          <include name="products8"/>
+        </methods>
+      </class> <!-- com.Test.RemoveCrat17 -->
     </classes>
   </test> <!-- Test(failed) -->
-  <test thread-count="5" parallel="tests" name="Test1(failed)">
-    <parameter name="browser" value="Edge"/>
-    <classes>
-      <class name="com.Test.AddProduct12">
-        <methods>
-          <include name="products8"/>
-          <include name="cross"/>
-        </methods>
-      </class> <!-- com.Test.AddProduct12 -->
-    </classes>
-  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

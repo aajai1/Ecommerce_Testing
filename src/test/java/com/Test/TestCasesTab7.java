@@ -11,7 +11,8 @@ import com.utils.SourcesLink;
 public class TestCasesTab7 {
 	@Test
 	public static void contactUs()  {
-	WebDriver driver = Browser.chromeDriver();
+	
+		WebDriver driver = Browser.edgeDriver();
 	SourcesLink.link(driver);
 	WebElement logo = LocatorsForElement.XpathLocator(driver, "//*[@id=\"header\"]/div/div/div/div[1]/div/a/img");
 	if(logo.isDisplayed()) {
