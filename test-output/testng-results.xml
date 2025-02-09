@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-07T22:09:17 IST" name="Default suite" finished-at="2025-02-07T22:09:31 IST" duration-ms="13464">
+  <suite started-at="2025-02-07T22:43:32 IST" name="Default suite" finished-at="2025-02-07T22:43:40 IST" duration-ms="8084">
     <groups>
     </groups>
-    <test started-at="2025-02-07T22:09:17 IST" name="Default test" finished-at="2025-02-07T22:09:31 IST" duration-ms="13464">
-      <class name="com.Test.ViewCategoryProducts18">
-        <test-method signature="viewCategoryProducts18()[pri:0, instance:com.Test.ViewCategoryProducts18@77888435]" started-at="2025-02-07T22:09:17 IST" name="viewCategoryProducts18" finished-at="2025-02-07T22:09:31 IST" duration-ms="13433" status="PASS">
+    <test started-at="2025-02-07T22:43:32 IST" name="Default test" finished-at="2025-02-07T22:43:40 IST" duration-ms="8084">
+      <class name="com.Test.WithoutArrow26">
+        <test-method signature="useArrow25()[pri:0, instance:com.Test.WithoutArrow26@73a1e9a9]" started-at="2025-02-07T22:43:32 IST" name="useArrow25" finished-at="2025-02-07T22:43:40 IST" duration-ms="8039" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- viewCategoryProducts18 -->
-      </class> <!-- com.Test.ViewCategoryProducts18 -->
+        </test-method> <!-- useArrow25 -->
+      </class> <!-- com.Test.WithoutArrow26 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
