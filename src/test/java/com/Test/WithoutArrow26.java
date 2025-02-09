@@ -21,6 +21,7 @@ public class WithoutArrow26 {
 		Assert.assertTrue(logo.isDisplayed(), "logo is not Displayed");
 		JavascriptExecutor js =(JavascriptExecutor)driver;
 		js.executeScript("window.scrollTo(0,8285);");
+		Thread.sleep(3000);
 		js.executeScript("window.scrollTo(0,0);");
 		WebElement title = LocatorsForElement.XpathLocator(driver, "//*[@id=\"scrollUp\"]/i");
 		Assert.assertTrue(title.isDisplayed(), "Full-Fledged Message is not displayed");
