@@ -84,7 +84,7 @@
 	    </classes>
   </test>
 
-	   <test thread-count="1" name="Acc1">
+	   <test thread-count="1" name="Acc4">
   <classes>
      <class name="com.Test.accDelete2"/>
 
